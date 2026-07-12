@@ -1,34 +1,172 @@
-# Davi vs Filisteus - Protótipo de Mecânica Física 2D
+# Davi vs Filisteus 🪨
 
-Este é um protótipo funcional de jogo mobile/web 2D baseado em física, fortemente inspirado na mecânica clássica de *Angry Birds*. O projeto foi desenvolvido de forma nativa utilizando a biblioteca **Phaser 3** e o motor de física **Matter.js**, com foco em simulação de impactos reais e destruição de estruturas.
+Jogo mobile de física com mecânica híbrida: você usa um estilingue para derrotar inimigos que **avançam em direção à tenda de Davi** e **atiram de volta** — inspirado na história bíblica de Davi e Golias.
 
----
-
-## 🎯 Visão do Produto e Público-Alvo
-
-O objetivo do projeto é validar a jogabilidade e a física para um futuro jogo educativo e casual voltado para crianças de **8 a 12 anos**. 
-
-A temática tradicional foi adaptada para o contexto bíblico de forma lúdica e cartunesca:
-* **O Herói:** Jovem Davi operando sua fona (estilingue/funda).
-* **Os Projéteis:** Diferentes tipos de pedras físicas arremessadas.
-* **Os Inimigos:** Guerreiros Filisteus e o chefe gigante Golias (com maior resistência a impactos) posicionados estrategicamente dentro de fortificações destrutíveis de madeira e pedra.
+> Projeto de portfólio e aprendizado de game dev — construído do zero, com ênfase em aprender JavaScript/Phaser antes de usar qualquer IA para gerar código.
 
 ---
 
-## 🛠️ Stack Técnica e Arquitetura
+## 🎮 Como jogar
 
-Para garantir alto controle de escopo e facilidade de deploy para o portfólio, optou-se por uma arquitetura estática limpa, sem necessidade de etapas complexas de compilação (build tools):
+- Arraste a pedra no estilingue e solte para lançar
+- Uma linha de mira pontilhada indica a trajetória antes de lançar
+- Acerte os inimigos antes que eles cheguem à tenda de Davi
+- Cuidado: Lanceiros, Arqueiros e Golias **atiram de volta**
+- A tenda atrás de Davi é sua vida — se for destruída, a fase acaba
 
-* **Engine:** Phaser 3 (v3.60.0 via CDN)
-* **Physics Engine:** Matter.js (integrado ao Phaser, gerenciando corpos rígidos, massa, densidade e gravidade)
-* **Linguagem:** JavaScript moderno (ES6+) e HTML5 nativo
+---
 
-### Estrutura de Pastas
-```text
+## 🎨 Estilo visual
+
+Arte em **rubber hose animation** — linguagem visual dos desenhos animados Fleischer Studios e Disney dos anos 20/30 (mesma referência do Cuphead): contorno preto grosso, membros tubulares, cores chapadas, expressões exageradas e squash & stretch constante.
+
+Todos os personagens compartilham uma **cor de identidade visual** (`#56837E`) em algum acessório:
+
+| Personagem | Acessório teal |
+|---|---|
+| Davi | Bandana + cinto + funda |
+| Leão | Coleira |
+| Urso | Lenço no pescoço |
+| Ovelha | Sininho |
+| Soldado Lanceiro | Gema no capacete |
+| Soldado Arqueiro | Gema no capacete |
+| Soldado Escudeiro | Detalhe no cinto |
+| Golias | Gema no capacete |
+
+---
+
+## 🗺️ Progressão de fases
+
+O jogo segue a narrativa bíblica de 1 Samuel:
+
+```
+Fase 1 → Leão        (Davi pastor, protegendo o rebanho)
+Fase 2 → Urso        (segundo animal que Davi enfrenta)
+Fase 3+ → Exército Filisteu  (Soldados avançam em grupo)
+Fase Final → Golias  (chefão — anda mais devagar enquanto o Escudeiro viver)
+```
+
+Entre fases, Davi ganha XP e pode evoluir: mais pedras disponíveis e mais dano por acerto.
+
+---
+
+## 👾 Elenco e comportamento
+
+| Personagem | Tipo | Ataque | Vida |
+|---|---|---|---|
+| **Davi** | Protagonista | Estilingue (jogador) | Via tenda (2 estágios) |
+| **Leão** | Inimigo — corpo a corpo | Alcança e ataca a tenda | 2 acertos |
+| **Urso** | Inimigo — corpo a corpo (cômico) | Alcança e ataca a tenda | 2 acertos |
+| **Soldado Lanceiro** | Inimigo — distância | Lança quando a 35% da tela | 1 acerto |
+| **Soldado Arqueiro** | Inimigo — distância | Flecha quando a 60% da tela | 1 acerto |
+| **Soldado Escudeiro** | Inimigo — suporte | Sem ataque; atrasa o Golias | 1 acerto |
+| **Golias** | Chefão final | Lança (distância) + Espada (corpo a corpo) | 4 acertos |
+| **Ovelha** | NPC neutro | Sem ataque | — |
+
+**Ovelha:** reage à proximidade do predador (calma → alerta → assustada). Quando o predador é derrotado, vira bípede e corre em disparada até o Davi — estilo Papa-Léguas.
+
+**Escudeiro:** o alívio cômico — carrega o escudo do próprio Golias, enorme demais pra ele. Se a pedra acertar o topo do escudo, ele desmorona com o escudo em cima de forma cômica. Enquanto vivo, mantém o Golias na velocidade mínima.
+
+---
+
+## 🏕️ Sistema de vida — A Tenda
+
+Davi não perde vida diretamente. A **tenda do acampamento** atrás dele é que recebe o dano:
+
+```
+Intacta → Danificada → Destruída (= Derrota)
+```
+
+Projetéis que chegam sem ser interceptados acertam a tenda automaticamente. A defesa é **indireta**: derrotar o inimigo antes que ele ataque.
+
+---
+
+## 🛠️ Tech stack
+
+- **Motor:** [Phaser 3](https://phaser.io/) + Matter.js (física)
+- **Linguagem:** JavaScript (ES6+)
+- **Distribuição web:** GitHub Pages
+- **Distribuição mobile (planejado):** [Capacitor](https://capacitorjs.com/)
+
+---
+
+## 📁 Estrutura do projeto
+
+```
 davi-vs-filisteus/
-├── index.html          # Ponto de entrada do jogo (estrutura HTML e canvas)
-├── js/
-│   └── game.js         # Lógica pura do jogo, configurações e física do Phaser
-└── assets/             # Diretório reservado para recursos visuais e sonoros
-    ├── images/
-    └── sounds/
+├── index.html
+├── README.md
+├── .gitignore
+├── assets/
+│   ├── characters/
+│   │   ├── davi/
+│   │   ├── golias/
+│   │   ├── leao/
+│   │   ├── urso/
+│   │   ├── arqueiro/
+│   │   ├── soldados/
+│   │   └── ovelhas/
+│   ├── scenarios/
+│   ├── props/           ← tenda e outros elementos de fase
+│   ├── ui/
+│   └── fonts/
+└── src/
+    └── game.js
+```
+
+---
+
+## 🗂️ Documentação
+
+| Documento | Descrição |
+|---|---|
+| [`docs/prd.md`](docs/prd.md) | Product Requirements Document — o quê e por quê |
+| [`docs/spec-mecanica.md`](docs/spec-mecanica.md) | Game Design Document — regras e valores numéricos de cada sistema |
+
+---
+
+## 🚀 Como rodar localmente
+
+```bash
+git clone https://github.com/seuusuario/davi-vs-filisteus.git
+cd davi-vs-filisteus
+# Abra o index.html num servidor local (ex: extensão Live Server no VS Code)
+# Não funciona direto pelo sistema de arquivos por restrições de CORS do Phaser
+```
+
+---
+
+## 📍 Roadmap
+
+- [x] Elenco completo de personagens desenhado (estilo rubber hose)
+- [x] PRD e spec de mecânica documentados
+- [ ] Mecânica de estilingue + linha de mira
+- [ ] Sistema de avanço de inimigos
+- [ ] Sistema de vida via tenda
+- [ ] Ataque à distância dos inimigos
+- [ ] Comportamento das Ovelhas
+- [ ] Controles touch nativos
+- [ ] Fase 1 — Leão completa
+- [ ] Fase 2 — Urso completa
+- [ ] Sistema de progressão (XP + upgrade)
+- [ ] Fases 3+ — Filisteus e Golias
+- [ ] Build mobile (Capacitor)
+- [ ] Publicação no GitHub Pages
+
+---
+
+## 📖 Contexto bíblico
+
+A história é baseada em **1 Samuel 17**: Davi, um jovem pastor, enfrenta o gigante Golias com apenas um estilingue e cinco pedras. Antes desse confronto, Davi havia derrotado um leão e um urso enquanto guardava o rebanho de seu pai (1 Samuel 17:34-36).
+
+---
+
+## 👤 Autor
+
+Danilo — projeto de aprendizado de JavaScript e game dev.  
+[GitHub](https://github.com/seuusuario) · [LinkedIn](https://linkedin.com/in/seuusuario)
+
+---
+
+> *"O Senhor, que me livrou das garras do leão e do urso, me livrará também da mão desse filisteu."*  
+> — 1 Samuel 17:37
