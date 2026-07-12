@@ -16,13 +16,12 @@ export class BootScene extends Phaser.Scene {
                 fill: '#feb47b'
             }
         }).setOrigin(0.5);
-
-        // Criar texturas temporárias para o estilingue e pedras enquanto não temos sprites
-        // Isso nos permite programar a física de forma visual
-        this.createPlaceholderTextures();
     }
 
     create() {
+        // Criar texturas temporárias para o estilingue e pedras
+        this.createPlaceholderTextures();
+        
         // Transição imediata para o Menu Principal
         this.scene.start('MenuScene');
     }

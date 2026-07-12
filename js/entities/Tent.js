@@ -11,6 +11,7 @@ export class Tent extends Phaser.GameObjects.Rectangle {
         // Adiciona corpo estático do Matter.js associado a este Game Object
         scene.matter.add.gameObject(this, {
             isStatic: true,
+            isSensor: true, // Define como sensor para detectar inimigos sem interferir na física da pedra de Davi
             label: 'tent'
         });
 

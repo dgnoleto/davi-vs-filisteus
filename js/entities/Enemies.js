@@ -150,35 +150,30 @@ export class ShieldSoldier extends Enemy {
 // ==========================================
 export class Goliath extends Enemy {
     constructor(scene, x, y) {
-        // Chama construtor base temporariamente (HP = 5, Velocidade Base = 0.8)
-        super(scene, x, y, 70, 90, 'enemy_goliath', 5, 0.8);
+        // --- Criar Corpo Composto no Matter.js usando a biblioteca nativa do Matter ---
+        const Matter = scene.matter.world.lib;
 
-        // --- Substituição por Corpo Composto no Matter.js ---
-        // Criar os colisores individuais
-        const mainPart = Phaser.Physics.Matter.Matter.Bodies.circle(0, 15, 34, { 
+        const mainPart = Matter.Bodies.circle(0, 15, 34, { 
             label: 'goliath_main',
             density: 0.08
         });
         
-        const headPart = Phaser.Physics.Matter.Matter.Bodies.circle(0, -32, 16, { 
+        const headPart = Matter.Bodies.circle(0, -32, 16, { 
             label: 'goliath_head',
             isSensor: true, // Sensor detecta impacto mas não atrapalha a caminhada física do corpo
             density: 0.01
         });
 
         // Junta as partes no corpo composto
-        const compoundBody = Phaser.Physics.Matter.Matter.Body.create({
+        const compoundBody = Matter.Body.create({
             parts: [mainPart, headPart],
             friction: 0.2,
             restitution: 0.1,
             label: 'enemy_goliath'
         });
 
-        // Atribuir o novo corpo composto ao GameObject
-        this.setExistingBody(compoundBody);
-        
-        // Garante inércia infinita para evitar que Golias caia de lado ao colidir com pedras
-        this.scene.matter.body.setInertia(this.body, Infinity);
+        // Chama o construtor base passando o corpo composto personalizado
+        super(scene, x, y, 70, 90, 'enemy_goliath', 5, 0.8, compoundBody);
 
         // Crucial: Apontar a referência do game object de volta para este container em todas as partes
         compoundBody.parts.forEach(part => {

@@ -1,5 +1,5 @@
 export class Enemy extends Phaser.GameObjects.Container {
-    constructor(scene, x, y, width, height, label, hp, maxSpeed) {
+    constructor(scene, x, y, width, height, label, hp, maxSpeed, customBody = null) {
         super(scene, x, y);
         scene.add.existing(this);
 
@@ -11,14 +11,19 @@ export class Enemy extends Phaser.GameObjects.Container {
         this.speed = maxSpeed;
         this.isDefeated = false;
 
-        // Configuração do corpo físico retangular no Matter.js
-        this.scene.matter.add.gameObject(this, {
-            shape: { type: 'rectangle', width: width, height: height },
-            label: label,
-            density: 0.005,
-            friction: 0.1,
-            restitution: 0.1
-        });
+        if (customBody) {
+            // Se um corpo composto ou customizado for providenciado, vincula-o diretamente ao GameObject
+            this.scene.matter.add.gameObject(this, customBody);
+        } else {
+            // Configuração padrão do corpo físico retangular no Matter.js
+            this.scene.matter.add.gameObject(this, {
+                shape: { type: 'rectangle', width: width, height: height },
+                label: label,
+                density: 0.005,
+                friction: 0.1,
+                restitution: 0.1
+            });
+        }
 
         // Impede a rotação física para que o inimigo ande sempre "em pé"
         this.scene.matter.body.setInertia(this.body, Infinity);
