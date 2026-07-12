@@ -22,8 +22,8 @@ export class LevelSelectScene extends Phaser.Scene {
         // Dados das fases
         const levelData = [
             { id: 1, name: 'Fase 1: O Leão', desc: 'Proteja as ovelhas do predador faminto', unlocked: true },
-            { id: 2, name: 'Fase 2: O Urso', desc: 'Defenda o rebanho do ataque do urso', unlocked: false },
-            { id: 3, name: 'Fase 3: Golias', desc: 'Enfrente o gigante filisteu e seu exército', unlocked: false }
+            { id: 2, name: 'Fase 2: O Urso', desc: 'Defenda o rebanho do ataque do urso', unlocked: true },
+            { id: 3, name: 'Fase 3: Golias', desc: 'Enfrente o gigante filisteu e seu exército', unlocked: true }
         ];
 
         const cardWidth = 260;
