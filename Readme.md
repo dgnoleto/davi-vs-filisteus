@@ -4,6 +4,14 @@ Jogo mobile de física com mecânica híbrida: você usa um estilingue para derr
 
 > Projeto de portfólio e aprendizado de game dev — construído do zero, com ênfase em aprender JavaScript/Phaser antes de usar qualquer IA para gerar código.
 
+### Estado atual do protótipo
+
+A primeira fase utiliza poses estáticas de Davi e do leão preparadas a partir das pranchas existentes, além do cenário recuperado em `assets/scenarios/cenario.png`. Os braços e as pernas de Davi usam o mesmo tom de pele do rosto; as luvas e os sapatos mantêm suas cores. As pranchas originais foram preservadas. Consulte [a preparação das artes](assets/characters/README-artes.md).
+
+Ovelhas, tenda e os outros inimigos ainda usam visuais provisórios. Animações por quadros, ataques à distância, XP e melhorias permanecem planejados; as seções abaixo descrevem a proposta de jogo. O balanceamento e as regras de vitória/derrota ainda precisam dos ajustes identificados na revisão.
+
+Para testar, execute um servidor HTTP na raiz, por exemplo `python -m http.server 8000`, e abra `http://localhost:8000`. As áreas de colisão ficam disponíveis em `http://localhost:8000/?debug`.
+
 ---
 
 ## 🎮 Como jogar

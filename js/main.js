@@ -17,7 +17,7 @@ const config = {
         default: 'matter',
         matter: {
             gravity: { y: 1 },
-            debug: true // Mantém o debug visual ativado para ajustes finos de física
+            debug: new URLSearchParams(window.location.search).has('debug')
         }
     },
     scene: [BootScene, MenuScene, LevelSelectScene, GameScene, UpgradeScene]

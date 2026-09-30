@@ -16,9 +16,10 @@ export class David {
         this.MAX_PULL_RADIUS = 120;
         this.MAX_PULL_DOWN = 70;
 
-        // Sprite base do estilingue
-        this.slingshotSprite = scene.add.image(anchorX, anchorY + 30, 'slingshot-placeholder');
-        this.slingshotSprite.setDepth(1);
+        // A pose vem da prancha Davi-v3. A imagem fica separada da pedra física.
+        this.davidSprite = scene.add.image(anchorX - 30, scene.cameras.main.height, 'david-art', 'standing');
+        this.davidSprite.setOrigin(0.5, 1).setFlipX(true).setDepth(1);
+        this.davidSprite.setScale(170 / this.davidSprite.height);
 
         this.setupInputListeners();
     }
@@ -69,7 +70,7 @@ export class David {
                 console.log("[David] Pedra agarrada com sucesso!");
                 this.isDragging = true;
                 this.scene.matter.body.setStatic(this.stone.body, true);
-                this.scene.matter.body.setSensor(this.stone.body, true); // Usa o helper oficial para evitar colisões
+                this.stone.setSensor(true);
             }
         });
 
@@ -104,7 +105,7 @@ export class David {
 
             // Libera a física dinâmica e reativa as colisões normais
             this.scene.matter.body.setStatic(this.stone.body, false);
-            this.scene.matter.body.setSensor(this.stone.body, false);
+            this.stone.setSensor(false);
 
             // Calcular vetor de puxão
             const pull = { x: this.anchor.x - this.stone.x, y: this.anchor.y - this.stone.y };
@@ -157,6 +158,6 @@ export class David {
         if (this.slingshotJoint) {
             this.scene.matter.world.remove(this.slingshotJoint);
         }
-        this.slingshotSprite.destroy();
+        this.davidSprite.destroy();
     }
 }
