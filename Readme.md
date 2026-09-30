@@ -10,6 +10,8 @@ A primeira fase utiliza poses estáticas de Davi e do leão preparadas a partir 
 
 Ovelhas, tenda e os outros inimigos ainda usam visuais provisórios. Animações por quadros, ataques à distância, XP e melhorias permanecem planejados; as seções abaixo descrevem a proposta de jogo. O balanceamento e as regras de vitória/derrota ainda precisam dos ajustes identificados na revisão.
 
+As pranchas de animação de Davi (giro da funda), leão (caminhada e reação à pedrada) e ovelhas (expressões e fuga cômica) foram aprovadas e estão disponíveis nos assets. Consulte [as artes de animação](assets/characters/README-animacoes.md) e [a prévia independente dos movimentos](prototypes/animacoes/index.html). A integração desses quadros no jogo ainda é a próxima etapa.
+
 Para testar, execute um servidor HTTP na raiz, por exemplo `python -m http.server 8000`, e abra `http://localhost:8000`. As áreas de colisão ficam disponíveis em `http://localhost:8000/?debug`.
 
 ---
