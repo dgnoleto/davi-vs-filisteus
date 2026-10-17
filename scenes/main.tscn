@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://cvwmhibhib70p"]
 
+[ext_resource type="Script" uid="uid://yv7jdbih8ys4" path="res://scripts/David.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://qw20w10f8782" path="res://assets/characters/davi/davi-idle-skin-v2.png" id="1_o5qli"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
+radius = 342.0
+height = 1642.0
 
 [node name="Main" type="Node2D" unique_id=328103967]
 
 [node name="Davi" type="CharacterBody2D" parent="." unique_id=1718164565]
+script = ExtResource("1_0wfyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Davi" unique_id=1524392776]
 texture = ExtResource("1_o5qli")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Davi" unique_id=510643149]
+position = Vector2(-60, 27)
+shape = SubResource("CapsuleShape2D_sugp2")
