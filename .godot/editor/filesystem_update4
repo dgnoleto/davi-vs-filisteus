@@ -1,2 +1,5 @@
 res://scenes/main.tscn
 res://scripts/David.gd
+res://scripts/Stone.gd
+res://scripts/TestTarget.gd
+res://scenes/stone.tscn

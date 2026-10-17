@@ -146,10 +146,13 @@ prd-davi-vs-filisteus-v3.md::TextFile::-1::1782570396::0::1::::<><><>0<>0<><>::
 prd-davi-vs-filisteusv1.md::TextFile::-1::1782237553::0::1::::<><><>0<>0<><>::
 ::res://prototypes/::1792242749
 ::res://prototypes/animacoes/::1792242749
-::res://scenes/::1792250949
-main.tscn::PackedScene::6292964920905150473::1792253830::0::1::::<><><>0<>0<><>::uid://yv7jdbih8ys4::::res://scripts/David.gd<>uid://qw20w10f8782::::res://assets/characters/davi/davi-idle-skin-v2.png<>uid://w6o6tbte3qdi::::res://assets/scenarios/cenario.png
-::res://scripts/::1792253798
-David.gd::GDScript::1729843355550721433::1792253798::0::1::::David<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/::1792256332
+main.tscn::PackedScene::6292964920905150473::1792256332::0::1::::<><><>0<>0<><>::uid://yv7jdbih8ys4::::res://scripts/David.gd<>uid://qw20w10f8782::::res://assets/characters/davi/davi-idle-skin-v2.png<>uid://w6o6tbte3qdi::::res://assets/scenarios/cenario.png<>uid://cine78wc4wi7k::::res://scripts/TestTarget.gd
+stone.tscn::PackedScene::9174277992914377851::1792256175::0::1::::<><><>0<>0<><>::uid://7g1wgnivr7mn::::res://scripts/Stone.gd
+::res://scripts/::1792256288
+David.gd::GDScript::1729843355550721433::1792256288::0::1::::David<>CharacterBody2D<><>0<>0<><>::
+Stone.gd::GDScript::2260047527834041021::1792256538::0::1::::Stone<>RigidBody2D<><>0<>0<><>::
+TestTarget.gd::GDScript::5361490808056012330::1792256142::0::1::::TestTarget<>StaticBody2D<><>0<>0<><>::
 ::res://spec/::1786187468
 implementation_plan.md::TextFile::-1::1783894985::0::1::::<><><>0<>0<><>::
 spec-mecanica-davi-vs-filisteus.md::TextFile::-1::1782592782::0::1::::<><><>0<>0<><>::
