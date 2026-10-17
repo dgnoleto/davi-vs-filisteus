@@ -23,6 +23,11 @@ export class GameScene extends Phaser.Scene {
 
         this.cameras.main.fadeIn(500, 15, 15, 27);
 
+        // Reaproveita o cenário do projeto, preservando sua proporção.
+        const landscape = this.add.image(width / 2, height / 2, 'landscape-art', 'landscape');
+        landscape.setScale(Math.max(width / landscape.width, height / landscape.height));
+        landscape.setDepth(-10);
+
         // Limites físicos do mundo no Matter.js (chão, teto e paredes com espessura de 64px)
         this.matter.world.setBounds(0, 0, width, height, 64, true, true, true, true);
 
@@ -44,13 +49,13 @@ export class GameScene extends Phaser.Scene {
             fontFamily: 'Outfit',
             fontSize: '20px',
             fontWeight: '700',
-            fill: '#ffffff'
+            fill: '#3d2b1f'
         });
 
         this.shotsText = this.add.text(20, 50, `Pedras: ${this.shotsRemaining}`, {
             fontFamily: 'Outfit',
             fontSize: '18px',
-            fill: '#feb47b'
+            fill: '#3d2b1f'
         });
 
         // Botão Reiniciar na UI

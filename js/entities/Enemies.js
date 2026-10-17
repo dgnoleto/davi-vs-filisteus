@@ -6,24 +6,13 @@ import { Enemy } from './Enemy.js';
 export class Lion extends Enemy {
     constructor(scene, x, y) {
         // HP = 2, MaxSpeed = 2.0 (Inimigo rápido)
-        super(scene, x, y, 65, 55, 'enemy_lion', 2, 2.0);
+        super(scene, x, y, 60, 140, 'enemy_lion', 2, 2.0);
 
-        // Desenhar Placeholder visual do Leão (Estilo Rubber Hose)
-        const mane = scene.add.arc(0, -5, 26, 0, 360, false, 0x8c4b19); // Juba
-        mane.setStrokeStyle(3, 0x000000);
-
-        const face = scene.add.arc(0, -5, 20, 0, 360, false, 0xd9a05b); // Rosto
-        face.setStrokeStyle(2, 0x000000);
-
-        // Olhos Pie-cut clássicos
-        const eyeL = scene.add.text(-8, -12, '▲', { font: '10px Arial', fill: '#000000' }).setOrigin(0.5);
-        const eyeR = scene.add.text(4, -12, '▲', { font: '10px Arial', fill: '#000000' }).setOrigin(0.5);
-
-        // Corpo e Patas
-        const bodyBack = scene.add.rectangle(-15, 10, 40, 25, 0xd9a05b);
-        bodyBack.setStrokeStyle(2, 0x000000);
-
-        this.add([bodyBack, mane, face, eyeL, eyeR]);
+        // O corpo cobre cabeça, tronco e pés; a cauda é apenas visual.
+        this.artSprite = scene.add.image(0, 70, 'lion-art', 'standing');
+        this.artSprite.setOrigin(0.5, 1).setFlipX(true);
+        this.artSprite.setScale(154 / this.artSprite.height);
+        this.add(this.artSprite);
     }
 }
 

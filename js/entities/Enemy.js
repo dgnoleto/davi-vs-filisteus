@@ -59,7 +59,7 @@ export class Enemy extends Phaser.GameObjects.Container {
         this.isDefeated = true;
 
         // Animação de derrota: girar e cair
-        this.scene.matter.body.setSensor(this.body, true); // Deixa de colidir com as coisas
+        this.body.parts.forEach(part => { part.isSensor = true; });
         this.scene.matter.body.setVelocity(this.body, { x: 5, y: -8 }); // Salta levemente para a direita/cima
         
         this.scene.tweens.add({
