@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fennara Chat</title>
+    <link rel="stylesheet" href="./styles.css?v=mcp-apps-7" />
+  </head>
+  <body>
+    <main class="app-shell" data-connection="offline">
+      <header class="topbar" aria-label="Fennara toolbar">
+        <button class="icon-button drawer-toggle" type="button" title="Chats" aria-label="Chats" data-toggle-drawer>
+          <svg class="svg-icon svg-fill-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9.94 2.25c-1.84 0-3.29 0-4.43.15-1.17.16-2.12.49-2.87 1.24-.75.75-1.08 1.7-1.24 2.87-.15 1.14-.15 2.6-.15 4.43v2.12c0 1.84 0 3.29.15 4.43.16 1.17.49 2.12 1.24 2.87.75.75 1.7 1.08 2.87 1.24 1.14.15 2.6.15 4.43.15h4.12c.31 0 .61 0 .91-.01H15c.01 0 .03 0 .04-.01 1.38 0 2.52-.03 3.45-.15 1.17-.16 2.12-.49 2.87-1.24.75-.75 1.08-1.7 1.24-2.87.15-1.14.15-2.6.15-4.43v-2.12c0-1.84 0-3.29-.15-4.43-.16-1.17-.49-2.12-1.24-2.87-.75-.75-1.7-1.08-2.87-1.24-.93-.12-2.07-.15-3.45-.15H9.94Zm4.31 1.5v16.5H10c-1.91 0-3.26 0-4.29-.14-1.01-.13-1.59-.39-2.01-.81-.42-.42-.68-1-.81-2.01-.14-1.03-.14-2.38-.14-4.29v-2c0-1.91 0-3.26.14-4.29.13-1.01.39-1.59.81-2.01.42-.42 1-.68 2.01-.81 1.03-.14 2.38-.14 4.29-.14h4.25Zm1.5 16.49V3.76c1.03.01 1.86.04 2.54.13 1.01.14 1.59.39 2.01.81.42.42.68 1 .81 2.01.14 1.03.14 2.38.14 4.29v2c0 1.91 0 3.26-.14 4.29-.13 1.01-.39 1.59-.81 2.01-.42.42-1 .68-2.01.81-.68.09-1.51.12-2.54.13Z"></path>
+          </svg>
+        </button>
+        <h1 class="chat-title" data-chat-title>Scene Diagnostics</h1>
+        <div class="toolbar" aria-label="Chat toolbar">
+          <div class="target-menu" data-target-menu hidden>
+            <button class="target-pill" type="button" data-set-mcp-target>
+              <span class="project-status-dot" aria-hidden="true"></span>
+              <span data-target-pill-text>MCP target</span>
+            </button>
+            <div class="target-popover" role="tooltip" data-target-popover>
+              <strong data-target-popover-title>MCP target</strong>
+              <span data-target-popover-text></span>
+            </div>
+          </div>
+          <div class="version-menu" data-version-menu hidden>
+            <button class="version-button" type="button" aria-label="Update Fennara" aria-expanded="false" data-version-warning>
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 19V5"></path>
+                <path d="m6.5 10.5 5.5-5.5 5.5 5.5"></path>
+              </svg>
+              <span>Update</span>
+            </button>
+            <div class="version-popover" role="tooltip" data-version-popover>
+              <strong>Update available</strong>
+              <span data-version-warning-text>Press Update to start.</span>
+            </div>
+          </div>
+          <button class="icon-button" type="button" title="Settings" aria-label="Settings" data-open-settings>
+            <svg class="svg-icon svg-fill-icon" viewBox="0 0 1024 1024" aria-hidden="true">
+              <path d="M600.7 64a32 32 0 0 1 30.5 22.2l35.2 109.4a351.8 351.8 0 0 1 42.4 24.5l112.4-24.2a32 32 0 0 1 34.4 15.4l88.7 153.5a32 32 0 0 1-4 37.5l-77.1 85.1a357.1 357.1 0 0 1 0 49l77.1 85.3a32 32 0 0 1 4 37.5l-88.7 153.6a32 32 0 0 1-34.4 15.3L708.8 803.9a351.8 351.8 0 0 1-42.4 24.5l-35.2 109.4a32 32 0 0 1-30.5 22.2H423.3a32 32 0 0 1-30.5-22.2l-35.1-109.3a351.6 351.6 0 0 1-42.6-24.6l-112.3 24.2a32 32 0 0 1-34.4-15.4L79.7 659.2a32 32 0 0 1 4-37.5l77.1-85.3a357.1 357.1 0 0 1 0-48.9l-77.1-85.2a32 32 0 0 1-4-37.5l88.7-153.6a32 32 0 0 1 34.4-15.3l112.3 24.3a351.6 351.6 0 0 1 42.6-24.6l35.2-109.4A32 32 0 0 1 423.2 64h177.5Zm-23.4 64H446.7l-36.3 113.1-24.5 12a294.1 294.1 0 0 0-34.8 20.1l-22.7 15.4-116.2-25.1-65.3 113.2 79.7 88.2-1.9 27.1a293.1 293.1 0 0 0 0 40.2l1.9 27.1-79.8 88.2 65.3 113.2 116.2-25 22.7 15.3a294.1 294.1 0 0 0 34.8 20.1l24.5 12L446.7 896h130.7l36.5-113.2 24.4-11.9a288.3 288.3 0 0 0 34.8-20.1l22.6-15.3 116.3 25 65.3-113.2-79.8-88.2 1.9-27.1a293.1 293.1 0 0 0 0-40.3l-1.9-27.1 79.8-88.1L812 263.4l-116.3 25-22.6-15.2a287.6 287.6 0 0 0-34.8-20.1l-24.4-11.9L577.3 128ZM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384Zm0 64a128 128 0 1 0 0 256 128 128 0 0 0 0-256Z"></path>
+            </svg>
+          </button>
+          <button class="icon-button" type="button" title="New chat" aria-label="New chat" data-new-chat>
+            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+            </svg>
+          </button>
+          <button class="icon-button" type="button" title="Reload UI" aria-label="Reload UI" data-reload-ui>
+            <span aria-hidden="true">R</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="update-start-overlay" aria-live="polite" data-update-start-overlay hidden>
+        <div class="update-start-card">
+          <span class="update-start-spinner" aria-hidden="true"></span>
+          <strong>Starting Fennara update</strong>
+          <span>Opening verified update preparation in Godot...</span>
+        </div>
+      </section>
+
+      <aside class="chat-drawer" aria-label="Chats drawer" data-chat-drawer>
+        <div class="drawer-top">
+          <button class="drawer-action" type="button" data-new-chat>
+            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+            </svg>
+            <strong>New Chat</strong>
+          </button>
+        </div>
+        <section class="drawer-list" aria-label="Recent chats" data-chat-list>
+          <h2>Chats</h2>
+        </section>
+      </aside>
+
+      <section class="conversation" aria-label="Chat transcript" data-transcript>
+        <article class="message user">
+          <div class="message-body">Can you check the player collision?</div>
+          <div class="message-time">7:29 PM</div>
+        </article>
+
+        <article class="message assistant">
+          <div class="message-body markdown-body">
+            <p>
+              I can inspect the open Godot scene and compare the physics body, collision shape, and movement script.
+            </p>
+            <p>
+              Current context: <a href="#">res://scenes/game.tscn</a> and <a href="#">res://scripts/player.gd</a>.
+            </p>
+          </div>
+          <div class="message-actions" aria-label="Message actions">
+            <button class="copy-message-button" type="button" aria-label="Copy message">
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 11c0-2.83 0-4.24.88-5.12C7.76 5 9.17 5 12 5h3c2.83 0 4.24 0 5.12.88C21 6.76 21 8.17 21 11v5c0 2.83 0 4.24-.88 5.12C19.24 22 17.83 22 15 22h-3c-2.83 0-4.24 0-5.12-.88C6 20.24 6 18.83 6 16v-5Z"></path>
+                <path d="M6 19a3 3 0 0 1-3-3v-6c0-3.77 0-5.66 1.17-6.83C5.34 2 7.23 2 11 2h4a3 3 0 0 1 3 3"></path>
+              </svg>
+            </button>
+            <span>•</span>
+            <span>$0.0063</span>
+          </div>
+        </article>
+
+        <article class="message user">
+          <div class="message-body">
+            Inspect the current scene and tell me why the player collision feels wrong.
+          </div>
+          <div class="message-time">7:33 PM</div>
+        </article>
+
+        <details class="thinking-card" open>
+          <summary>
+            <span class="thinking-chevron" aria-hidden="true">›</span>
+            <span class="thinking-dot" aria-hidden="true"></span>
+            <span>Thinking</span>
+          </summary>
+          <p>
+            I should inspect the selected node, compare its collision shape with the visible sprite,
+            then ask Godot for script diagnostics before suggesting a fix.
+          </p>
+        </details>
+
+        <details class="tool-call" open>
+          <summary>
+            <span class="tool-chevron" aria-hidden="true">›</span>
+            <span class="tool-status success" aria-hidden="true"></span>
+            <code>inspect_scene</code>
+            <span>completed</span>
+          </summary>
+          <dl>
+            <div>
+              <dt>Target</dt>
+              <dd>res://scenes/game.tscn</dd>
+            </div>
+            <div>
+              <dt>Result</dt>
+              <dd>24 nodes, 3 warnings</dd>
+            </div>
+            <div>
+              <dt>Checked</dt>
+              <dd>CollisionShape2D, CharacterBody2D, InputMap</dd>
+            </div>
+          </dl>
+        </details>
+
+        <article class="message assistant">
+          <div class="message-body markdown-body">
+            <p>The scene looks mostly wired correctly. The likely issue is one of these:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Check</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CollisionShape2D size</td>
+                  <td>Needs visual match</td>
+                </tr>
+                <tr>
+                  <td>Movement method</td>
+                  <td>Use physics-safe movement</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="code-block">
+              <figcaption>
+                <span>gdscript</span>
+                <button class="copy-code-button" type="button" aria-label="Copy code" data-copy-code>
+                  <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 11c0-2.83 0-4.24.88-5.12C7.76 5 9.17 5 12 5h3c2.83 0 4.24 0 5.12.88C21 6.76 21 8.17 21 11v5c0 2.83 0 4.24-.88 5.12C19.24 22 17.83 22 15 22h-3c-2.83 0-4.24 0-5.12-.88C6 20.24 6 18.83 6 16v-5Z"></path>
+                    <path d="M6 19a3 3 0 0 1-3-3v-6c0-3.77 0-5.66 1.17-6.83C5.34 2 7.23 2 11 2h4a3 3 0 0 1 3 3"></path>
+                  </svg>
+                </button>
+              </figcaption>
+              <pre><code>func _physics_process(delta):
+    velocity = input_dir * speed
+    move_and_slide()</code></pre>
+            </figure>
+            <figure class="chat-image">
+              <div class="image-canvas inline-image" aria-label="Scene screenshot preview">
+                <span>Game viewport preview</span>
+              </div>
+              <figcaption>Scene screenshot</figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+
+      <form class="composer" data-composer>
+        <div class="composer-card">
+          <div class="composer-attachments" data-attachment-preview hidden></div>
+          <textarea
+            rows="1"
+            name="prompt"
+            aria-label="Message"
+            placeholder="Ask about the current Godot project..."
+            data-prompt
+          ></textarea>
+          <div class="composer-actions">
+            <div class="composer-controls">
+              <button
+                class="composer-icon-button"
+                type="button"
+                title="Attach image"
+                aria-label="Attach image"
+                data-attach-image
+              >
+                <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <circle cx="8.5" cy="10.5" r="1.5"></circle>
+                  <path d="m21 15-4.5-4.5L9 18"></path>
+                </svg>
+              </button>
+              <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple data-image-input hidden />
+              <input type="hidden" data-model />
+              <button
+                class="composer-model-button"
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                data-open-model-picker
+              >
+                <span data-model-status>No model</span>
+              </button>
+              <div class="composer-effort-menu" data-effort-menu>
+                <button
+                  class="composer-effort-button"
+                  type="button"
+                  title="Reasoning effort"
+                  aria-label="Reasoning effort"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  data-effort-toggle
+                >
+                  <span data-effort-status>Medium</span>
+                  <svg class="composer-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 15 6-6 6 6"></path>
+                  </svg>
+                </button>
+                <div class="composer-effort-options" role="listbox" data-effort-options hidden>
+                  <button type="button" role="option" data-effort-option value="low">Low</button>
+                  <button type="button" role="option" data-effort-option value="medium" aria-selected="true">Medium</button>
+                  <button type="button" role="option" data-effort-option value="high">High</button>
+                </div>
+              </div>
+              <div class="composer-usage">
+                <button class="composer-cost-badge" type="button" data-session-cost aria-haspopup="dialog" aria-expanded="false" hidden></button>
+                <div class="usage-popover" data-usage-popover hidden>
+                  <div class="usage-popover-heading">Usage</div>
+                  <dl>
+                    <div>
+                      <dt>Total spent</dt>
+                      <dd data-usage-total-cost>$0.00</dd>
+                    </div>
+                    <div>
+                      <dt>Chat size</dt>
+                      <dd data-chat-size>0 / ? tokens</dd>
+                    </div>
+                    <div>
+                      <dt>Model context</dt>
+                      <dd data-usage-context>Unknown</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <div class="composer-submit-actions">
+              <span class="revert-maintenance" data-revert-maintenance>
+                <button
+                  class="secondary-button revert-button"
+                  type="button"
+                  title="Currently under maintenance"
+                  aria-describedby="revert-maintenance-tooltip"
+                  data-revert-button
+                  disabled
+                >
+                  Revert
+                </button>
+                <span class="revert-maintenance-tooltip" id="revert-maintenance-tooltip" role="tooltip">
+                  Currently under maintenance
+                </span>
+              </span>
+              <button class="primary-button send-button" type="submit" data-send-button>
+                <span class="send-label">Send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <section class="command-popover" data-command-popover hidden>
+        <div class="command-palette" role="listbox" aria-label="Composer commands">
+          <button type="button" role="option" data-command-option="/provider">
+            <strong>/provider</strong>
+            <span>Connect providers</span>
+          </button>
+          <button type="button" role="option" data-command-option="/model">
+            <strong>/model</strong>
+            <span>Select or add a model</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="model-popover" data-provider-popover hidden>
+        <div class="model-picker provider-picker" role="dialog" aria-label="Select provider">
+          <header class="picker-header">
+            <strong>Select provider</strong>
+            <span>esc</span>
+          </header>
+          <label class="model-search-row">
+            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.5-3.5"></path>
+            </svg>
+            <input type="search" placeholder="Search providers..." aria-label="Search providers" data-provider-search />
+          </label>
+          <div class="provider-options" data-provider-options></div>
+        </div>
+      </section>
+
+      <section class="model-popover custom-provider-popover" data-custom-provider-popover hidden>
+        <form class="custom-provider-picker" aria-label="Add custom provider" data-custom-provider-form novalidate>
+          <header class="custom-provider-header">
+            <button type="button" aria-label="Back to providers" data-custom-provider-back>←</button>
+            <strong data-custom-provider-title>Custom provider</strong>
+            <button type="button" aria-label="Close custom provider" data-custom-provider-close>×</button>
+          </header>
+          <div class="custom-provider-body">
+            <p class="custom-provider-intro">
+              Configure an OpenAI-compatible provider. Add the model IDs exactly as its API expects them.
+            </p>
+            <p class="custom-provider-error" data-custom-provider-error hidden></p>
+
+            <div class="custom-provider-fields">
+              <label>
+                <span>Provider ID</span>
+                <input type="text" autocomplete="off" placeholder="myprovider" data-custom-provider-id data-custom-provider-field="provider_id" />
+                <small>Lowercase letters, numbers, hyphens, or underscores.</small>
+                <small class="custom-provider-field-error" data-custom-provider-field-error="provider_id" hidden></small>
+              </label>
+              <label>
+                <span>Display name</span>
+                <input type="text" autocomplete="off" placeholder="My AI Provider" data-custom-provider-name data-custom-provider-field="display_name" />
+                <small class="custom-provider-field-error" data-custom-provider-field-error="display_name" hidden></small>
+              </label>
+              <label>
+                <span>Base URL</span>
+                <input type="url" inputmode="url" autocomplete="off" placeholder="https://api.myprovider.com/v1" data-custom-provider-base-url data-custom-provider-field="base_url" />
+                <small class="custom-provider-field-error" data-custom-provider-field-error="base_url" hidden></small>
+              </label>
+              <label>
+                <span>API key</span>
+                <input type="password" autocomplete="off" placeholder="API key" data-custom-provider-api-key />
+                <small data-custom-provider-api-key-help>Optional. Leave empty if authentication is handled through headers.</small>
+              </label>
+            </div>
+
+            <section class="custom-provider-section">
+              <h3>Models</h3>
+              <div class="custom-provider-rows" data-custom-provider-models></div>
+              <button class="custom-provider-add" type="button" data-custom-provider-add-model>+ Add model</button>
+            </section>
+
+            <section class="custom-provider-section">
+              <h3>Headers <span data-custom-provider-headers-help>(optional)</span></h3>
+              <div class="custom-provider-rows" data-custom-provider-headers></div>
+              <button class="custom-provider-add" type="button" data-custom-provider-add-header>+ Add header</button>
+            </section>
+
+            <button class="primary-button custom-provider-submit" type="submit" data-custom-provider-submit>
+              Add provider
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="model-popover" data-provider-key-popover hidden>
+        <form class="model-picker provider-picker key-picker" aria-label="Provider API key" data-provider-key-form>
+          <header class="picker-header">
+            <strong data-provider-key-title>API key</strong>
+            <span>esc</span>
+          </header>
+          <div class="provider-key-body">
+            <input type="password" autocomplete="off" placeholder="API key" data-provider-key-inline />
+          </div>
+          <footer class="key-picker-footer">
+            <strong>enter</strong>
+            <span>submit</span>
+          </footer>
+        </form>
+      </section>
+
+      <section class="model-popover" data-ollama-setup-popover hidden>
+        <form class="model-picker provider-picker ollama-setup-picker" aria-label="Local provider server" data-ollama-form>
+          <header class="picker-header">
+            <strong data-local-setup-title>Local provider</strong>
+            <span>esc</span>
+          </header>
+          <div class="ollama-inline-form">
+            <p class="ollama-help" data-local-setup-help>
+              Override the base URL only if your local server uses another URL. Models are listed automatically from the local server.
+            </p>
+            <label>
+              <span>Base URL</span>
+              <input
+                type="text"
+                inputmode="url"
+                autocomplete="off"
+                placeholder="http://127.0.0.1:11434"
+                data-ollama-base-url
+              />
+            </label>
+          </div>
+          <footer class="key-picker-footer">
+            <strong>enter</strong>
+            <span>save</span>
+          </footer>
+        </form>
+      </section>
+
+      <section class="model-popover" data-model-popover hidden>
+        <div class="model-picker" role="listbox" aria-label="Chat models">
+          <header class="picker-header">
+            <strong>Select model</strong>
+            <span>esc</span>
+          </header>
+          <label class="model-search-row">
+            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.5-3.5"></path>
+            </svg>
+            <input type="search" placeholder="Search models..." aria-label="Search models" data-model-search />
+          </label>
+          <div class="model-list" data-model-list></div>
+          <aside class="model-detail" data-model-detail hidden></aside>
+        </div>
+      </section>
+
+      <dialog class="settings-dialog" data-settings>
+        <form method="dialog" class="settings-panel">
+          <header>
+            <h2>Chat Settings</h2>
+            <button class="icon-button" type="submit" aria-label="Close settings">x</button>
+          </header>
+          <nav class="settings-tabs" aria-label="Settings sections">
+            <button class="settings-tab is-active" type="button" aria-selected="true" data-settings-tab="chat">Chat</button>
+            <button class="settings-tab" type="button" aria-selected="false" data-settings-tab="mcp">MCP Apps</button>
+          </nav>
+          <section class="settings-page" data-settings-page="chat">
+            <fieldset class="settings-group">
+              <legend>Providers</legend>
+              <p class="settings-note">
+                Choose a provider and configure the connection details it requires.
+              </p>
+              <button class="secondary-button settings-provider-button" type="button" data-open-settings-providers>
+                Open providers
+              </button>
+            </fieldset>
+            <fieldset class="settings-group">
+              <legend>Tool approvals</legend>
+              <label class="settings-radio">
+                <input type="radio" name="approval_mode" value="ask" data-approval-mode checked />
+                <span>
+                  <strong>Ask for approval</strong>
+                  <small>Read-only tools run. Project changes and runtime actions wait for you.</small>
+                </span>
+              </label>
+              <label class="settings-radio">
+                <input type="radio" name="approval_mode" value="full_access" data-approval-mode />
+                <span>
+                  <strong>Full access</strong>
+                  <small>Project changes and runtime actions run without prompting. Hard safety blocks still apply.</small>
+                </span>
+              </label>
+            </fieldset>
+            <fieldset class="settings-group">
+              <legend>Chat display</legend>
+              <label class="settings-check">
+                <input type="checkbox" data-chat-surface-browser />
+                <span>Open chat in my system browser next time</span>
+              </label>
+              <p class="settings-note">
+                This keeps the Godot dock lightweight and can reduce editor GPU and memory usage.
+              </p>
+              <p class="settings-status settings-restart" data-chat-surface-restart hidden>
+                Restart Godot for this change to take effect.
+              </p>
+            </fieldset>
+            <fieldset class="settings-group">
+              <legend>Anonymous telemetry</legend>
+              <label class="settings-check">
+                <input type="checkbox" data-telemetry-enabled checked />
+                <span>Share anonymous daily usage</span>
+              </label>
+              <p class="settings-note">
+                Sends an anonymous installation ID, Fennara and Godot versions, operating system, and CPU architecture at most once per UTC day. It never sends project names, paths, prompts, tool inputs, tool results, logs, or screenshots.
+              </p>
+              <p class="settings-status" data-telemetry-environment-status hidden>
+                Telemetry is disabled by an environment variable.
+              </p>
+            </fieldset>
+          </section>
+          <section class="settings-page mcp-apps-page" data-settings-page="mcp" hidden>
+            <div class="mcp-apps-intro">
+              <div>
+                <h3>Use Fennara from your AI apps</h3>
+                <p>Connect an app once, then choose this Godot project from the MCP target button.</p>
+              </div>
+              <span class="mcp-ready-badge"><span></span> Fennara ready</span>
+            </div>
+            <label class="mcp-app-search">
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="M20 20l-3.5-3.5"></path>
+              </svg>
+              <input type="search" placeholder="Search supported apps..." aria-label="Search supported MCP apps" data-mcp-app-search />
+            </label>
+            <div class="mcp-app-list" aria-label="MCP applications">
+              <article class="mcp-app-card" data-mcp-app="codex" data-mcp-search="codex">
+                <div class="mcp-app-copy">
+                  <strong>Codex</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="claude" data-mcp-search="claude code desktop" data-mcp-restart="Claude Code and Claude Desktop">
+                <div class="mcp-app-copy">
+                  <strong>Claude</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="gemini" data-mcp-search="gemini antigravity" data-mcp-restart="Gemini CLI and Antigravity">
+                <div class="mcp-app-copy">
+                  <strong>Gemini &amp; Antigravity</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="cline" data-mcp-search="cline">
+                <div class="mcp-app-copy">
+                  <strong>Cline</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="cursor" data-mcp-search="cursor">
+                <div class="mcp-app-copy">
+                  <strong>Cursor</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="vscode" data-mcp-search="vs code vscode visual studio code">
+                <div class="mcp-app-copy">
+                  <strong>VS Code</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="opencode" data-mcp-search="opencode open code">
+                <div class="mcp-app-copy">
+                  <strong>OpenCode</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="windsurf" data-mcp-search="windsurf">
+                <div class="mcp-app-copy">
+                  <strong>Windsurf</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+              <article class="mcp-app-card" data-mcp-app="kiro" data-mcp-search="kiro">
+                <div class="mcp-app-copy">
+                  <strong>Kiro</strong>
+                  <span class="mcp-app-status" data-mcp-app-status>Setup available</span>
+                </div>
+                <button class="primary-button mcp-app-action" type="button" data-mcp-app-action>Set Up</button>
+              </article>
+            </div>
+            <p class="mcp-app-empty" data-mcp-app-empty hidden>No supported apps match your search.</p>
+            <div class="mcp-app-result" role="status" aria-live="polite" data-mcp-app-result hidden></div>
+            <p class="mcp-apps-footnote">Fennara creates a backup before changing an app's MCP configuration.</p>
+          </section>
+          <p class="settings-toast" role="status" aria-live="polite" data-settings-saved-toast hidden>
+            Settings saved
+          </p>
+          <menu data-settings-actions>
+            <button class="secondary-button" value="cancel">Cancel</button>
+            <button class="primary-button" value="default" data-save-settings disabled>Save</button>
+          </menu>
+        </form>
+      </dialog>
+    </main>
+
+    <script src="./vendor/markdown-it.min.js"></script>
+    <script src="./vendor/markdown-it-task-lists.min.js"></script>
+    <script src="./vendor/purify.min.js"></script>
+    <script src="./model-picker.js"></script>
+    <script src="./transcript-renderer.js"></script>
+    <script src="./daemon-client.js"></script>
+    <script src="./attachment-manager.js"></script>
+    <script src="./stored-transcript.js"></script>
+    <script src="./usage-summary.js"></script>
+    <script src="./command-palette.js"></script>
+    <script src="./project-status.js"></script>
+    <script src="./project-file-links.js"></script>
+    <script src="./custom-provider-dialog.js"></script>
+    <script src="./provider-popovers.js"></script>
+    <script src="./settings-panel.js"></script>
+    <script src="./mcp-apps-settings.js?v=mcp-apps-8"></script>
+    <script src="./chat-navigation.js"></script>
+    <script src="./composer-actions.js"></script>
+    <script src="./effort-controls.js"></script>
+    <script src="./overlay-manager.js"></script>
+    <script src="./shell-bindings.js"></script>
+    <script src="./app.js?v=mcp-apps-8"></script>
+  </body>
+</html>
