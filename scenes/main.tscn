@@ -27,8 +27,6 @@ region_rect = Rect2(0, 40, 751, 331)
 
 [node name="Davi" type="CharacterBody2D" parent="." unique_id=1718164565]
 position = Vector2(260, 670)
-collision_layer = 2
-collision_mask = 1
 script = ExtResource("1_0wfyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Davi" unique_id=1524392776]
@@ -64,8 +62,6 @@ default_color = Color(0.15, 0.35, 0.32, 1)
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1213042079]
 position = Vector2(640, 670)
-collision_layer = 1
-collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1203099739]
 position = Vector2(0, 50)
@@ -75,9 +71,7 @@ shape = SubResource("RectangleShape2D_jyhfs")
 position = Vector2(640, 360)
 
 [node name="TestTarget" type="StaticBody2D" parent="." unique_id=1749046751]
-position = Vector2(700, 620)
-collision_layer = 4
-collision_mask = 8
+position = Vector2(850, 620)
 script = ExtResource("4_jyhfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestTarget" unique_id=285635737]
