@@ -10,21 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Davi-vs-Filisteus"
-config/description="Jogo mobile de física com mecânica híbrida: você usa um estilingue para derrotar inimigos que avançam em direção à tenda de Davi e atiram de volta — inspirado na história bíblica de Davi e Golias.
+config/name="Davi vs Filisteus"
+config/description="Jogo mobile de física com mecânica híbrida, combinando puzzles balísticos de estilingue e combate tático contra inimigos que avançam e atacam de volta.
 
-Projeto de portfólio e aprendizado de game dev — construído do zero, com ênfase em aprender JavaScript/Phaser antes de usar qualquer IA para gerar código.
+Inspirado na narrativa bíblica de 1 Samuel 17, o jogador assume o papel do jovem pastor Davi. O objetivo é proteger a tenda do acampamento e o rebanho contra predadores e invasores, progredindo do Leão e do Urso até o exército dos Filisteus (Lanceiros, Arqueiros e Escudeiros) e o confronto épico com o gigante Golias.
 
-Estado atual do protótipo
-A primeira fase utiliza poses estáticas de Davi e do leão preparadas a partir das pranchas existentes, além do cenário recuperado em assets/scenarios/cenario.png. Os braços e as pernas de Davi usam o mesmo tom de pele do rosto; as luvas e os sapatos mantêm suas cores. As pranchas originais foram preservadas. Consulte a preparação das artes.
-
-Ovelhas, tenda e os outros inimigos ainda usam visuais provisórios. Animações por quadros, ataques à distância, XP e melhorias permanecem planejados; as seções abaixo descrevem a proposta de jogo. O balanceamento e as regras de vitória/derrota ainda precisam dos ajustes identificados na revisão.
-
-As pranchas de animação de Davi (giro da funda), leão (caminhada e reação à pedrada) e ovelhas (expressões e fuga cômica) foram aprovadas e estão disponíveis nos assets. Consulte as artes de animação e a prévia independente dos movimentos. A integração desses quadros no jogo ainda é a próxima etapa.
-
-Para testar, execute um servidor HTTP na raiz, por exemplo python -m http.server 8000, e abra http://localhost:8000. As áreas de colisão ficam disponíveis em http://localhost:8000/?debug.
-
-"
+Destaques de jogabilidade e design:
+- Mecânica de mira e lançamento de pedras com física 2D e trajetória preditiva.
+- Sistema de vida indireto centrado na tenda de Davi (Intacta -> Danificada -> Destruída).
+- Inimigos dinâmicos com comportamentos corpo a corpo e projéteis à distância.
+- NPCs de ovelhas com reações de alerta e fugas cômicas.
+- Direção de arte clássica 'rubber hose animation' (estilo anos 20/30) com identidade visual unificada em tom teal (#56837E)."
+config/version="0.1.0"
 config/features=PackedStringArray("4.7")
 
 [autoload]
