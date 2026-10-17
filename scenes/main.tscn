@@ -4,40 +4,43 @@
 [ext_resource type="Texture2D" uid="uid://qw20w10f8782" path="res://assets/characters/davi/davi-idle-skin-v2.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://w6o6tbte3qdi" path="res://assets/scenarios/cenario.png" id="1_sugp2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jyhfs"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
 radius = 28.0
 height = 160.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(2400, 100)
 
 [node name="Main" type="Node2D" unique_id=328103967]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=232170009]
 z_index = -10
-position = Vector2(640, 340)
-scale = Vector2(2.15, 2.15)
+position = Vector2(640, 360)
+scale = Vector2(2.2, 2.2)
 texture = ExtResource("1_sugp2")
+region_enabled = true
+region_rect = Rect2(0, 40, 751, 331)
 
 [node name="Davi" type="CharacterBody2D" parent="." unique_id=1718164565]
-position = Vector2(260, 580)
+position = Vector2(260, 670)
 script = ExtResource("1_0wfyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Davi" unique_id=1524392776]
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_o5qli")
 offset = Vector2(0, -768)
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Davi" unique_id=510643149]
 position = Vector2(0, -80)
-shape = SubResource("CapsuleShape2D_jyhfs")
+shape = SubResource("CapsuleShape2D_sugp2")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1213042079]
-position = Vector2(640, 580)
+position = Vector2(640, 670)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1203099739]
 position = Vector2(0, 50)
-shape = SubResource("RectangleShape2D_tbgi4")
+shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=525235433]
 position = Vector2(640, 360)
