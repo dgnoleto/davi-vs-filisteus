@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1792243083
+::res://::1792244257
 AGENTS.md::TextFile::-1::1792242432::0::1::::<><><>0<>0<><>::
 Readme.md::TextFile::-1::1792242749::0::1::::<><><>0<>0<><>::
 ::res://addons/::1792240386
@@ -44,7 +44,7 @@ Arqueiro.png::CompressedTexture2D::3969507369386255620::1782387662::1792240116::
 ::res://assets/characters/arqueiro/old-arqueiros/sprites/andando/::1782242551
 ::res://assets/characters/arqueiro/old-arqueiros/sprites/atirando/::1782242551
 ::res://assets/characters/arqueiro/old-arqueiros/sprites/morrendo/::1782242551
-::res://assets/characters/davi/::1792242749
+::res://assets/characters/davi/::1792243102
 davi-funda-v1.png::CompressedTexture2D::6411185355948847009::1792242749::1792243102::1::::<><><>0<>0<>0412f24646921b9a8bfb5de54cbb57fc<>res://.godot/imported/davi-funda-v1.png-ccfed56e4c602a92501e0f25905dc556.ctex::
 davi-idle-cutout-v1.png::CompressedTexture2D::1687736406449551219::1792242749::1792243102::1::::<><><>0<>0<>4f3155ed2925db9c89be9312e5cfc6e6<>res://.godot/imported/davi-idle-cutout-v1.png-e3088ef8f843a8e0478efd27b3f9670a.ctex::
 davi-idle-skin-v2.png::CompressedTexture2D::1170123009272670581::1792242749::1792243102::1::::<><><>0<>0<>6d68717a9f26025431c96a8c62e5df79<>res://.godot/imported/davi-idle-skin-v2.png-17b03166ab8dfedb281100fbecd417fa.ctex::
@@ -66,12 +66,12 @@ golias.png::CompressedTexture2D::3554213004599260925::1782242511::1792240116::1:
 ::res://assets/characters/golias/old-golias/sprites/andando/::1782242551
 ::res://assets/characters/golias/old-golias/sprites/batendo/::1782242551
 ::res://assets/characters/golias/old-golias/sprites/morrendo/::1782242551
-::res://assets/characters/leao/::1792242749
+::res://assets/characters/leao/::1792243102
 leao-caminhada-pedrada-v1.png::CompressedTexture2D::3320434382751785991::1792242749::1792243102::1::::<><><>0<>0<>39a4f70c97c2e745109667a6b9c7f7ea<>res://.godot/imported/leao-caminhada-pedrada-v1.png-7489e741c97d2c42d24ac7ace9fc22ad.ctex::
 Leão.png::CompressedTexture2D::6131543712304656523::1782338839::1792240116::1::::<><><>0<>0<>423fee1c4216b95648df29c6d1705569<>res://.godot/imported/Leão.png-3d03a65d242e071fd76cced4cdf64f46.ctex::
 lion-idle-cutout-v1.png::CompressedTexture2D::2564137618199226645::1792242749::1792243102::1::::<><><>0<>0<>e743fd009c61d6dbbd653e9c61630e42<>res://.godot/imported/lion-idle-cutout-v1.png-02fe2ca16c38b6b81a8e3f99183527d3.ctex::
 ::res://assets/characters/leao/old-leao/::1783899703
-::res://assets/characters/ovelhas/::1792242749
+::res://assets/characters/ovelhas/::1792243102
 Ovelha-v2.png::CompressedTexture2D::484877220490356121::1782341177::1792240116::1::::<><><>0<>0<>97a55c52d4a2f874d83aebe4fdce0266<>res://.godot/imported/Ovelha-v2.png-cf94d0ee371a417a3b88eeb3e09b42f0.ctex::
 ovelhas-reacoes-fuga-v1.png::CompressedTexture2D::6287495816870594535::1792242749::1792243102::1::::<><><>0<>0<>34147b0f2ce1e12741501d1e5762a8c8<>res://.godot/imported/ovelhas-reacoes-fuga-v1.png-2465266ea9afd3c64352580cdeb7d3ee.ctex::
 ::res://assets/characters/ovelhas/old-ovelhas/::1792240116
@@ -146,6 +146,8 @@ prd-davi-vs-filisteus-v3.md::TextFile::-1::1782570396::0::1::::<><><>0<>0<><>::
 prd-davi-vs-filisteusv1.md::TextFile::-1::1782237553::0::1::::<><><>0<>0<><>::
 ::res://prototypes/::1792242749
 ::res://prototypes/animacoes/::1792242749
+::res://scenes/::1792244247
+main.tscn::PackedScene::6292964920905150473::1792244259::0::1::::<><><>0<>0<><>::uid://qw20w10f8782::::res://assets/characters/davi/davi-idle-skin-v2.png
 ::res://spec/::1786187468
 implementation_plan.md::TextFile::-1::1783894985::0::1::::<><><>0<>0<><>::
 spec-mecanica-davi-vs-filisteus.md::TextFile::-1::1782592782::0::1::::<><><>0<>0<><>::
