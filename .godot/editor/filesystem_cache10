@@ -147,9 +147,9 @@ prd-davi-vs-filisteusv1.md::TextFile::-1::1782237553::0::1::::<><><>0<>0<><>::
 ::res://prototypes/::1792242749
 ::res://prototypes/animacoes/::1792242749
 ::res://scenes/::1792250949
-main.tscn::PackedScene::6292964920905150473::1792250949::0::1::::<><><>0<>0<><>::uid://yv7jdbih8ys4::::res://scripts/David.gd<>uid://qw20w10f8782::::res://assets/characters/davi/davi-idle-skin-v2.png<>uid://w6o6tbte3qdi::::res://assets/scenarios/cenario.png
-::res://scripts/::1792244782
-David.gd::GDScript::1729843355550721433::1792244782::0::1::::David<>CharacterBody2D<><>0<>0<><>::
+main.tscn::PackedScene::6292964920905150473::1792253830::0::1::::<><><>0<>0<><>::uid://yv7jdbih8ys4::::res://scripts/David.gd<>uid://qw20w10f8782::::res://assets/characters/davi/davi-idle-skin-v2.png<>uid://w6o6tbte3qdi::::res://assets/scenarios/cenario.png
+::res://scripts/::1792253798
+David.gd::GDScript::1729843355550721433::1792253798::0::1::::David<>CharacterBody2D<><>0<>0<><>::
 ::res://spec/::1786187468
 implementation_plan.md::TextFile::-1::1783894985::0::1::::<><><>0<>0<><>::
 spec-mecanica-davi-vs-filisteus.md::TextFile::-1::1782592782::0::1::::<><><>0<>0<><>::
