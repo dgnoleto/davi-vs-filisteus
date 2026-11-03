@@ -21,12 +21,13 @@ O jogador conduz Davi de pastor a herói de Israel, com cajado, funda e muito hu
 | Campo | Valor |
 | --- | --- |
 | Nome | Davi vs Filisteus |
-| Gênero | [Proposto] Plataforma de ação 2D com rolagem lateral |
+| Gênero | Plataforma de ação 2D com rolagem lateral e pulo [Decidido] |
 | Plataforma | Android primeiro; iOS e web depois da primeira versão [Proposto] |
 | Motor | Godot 4 [Decidido] |
 | Orientação | Paisagem [Proposto] |
 | Referências de tom | Earthworm Jim e Metal Slug [Decidido] |
 | Base narrativa | 1 Samuel 17 e 18 |
+| Objetivo principal | Publicar em loja; aprendizado e portfólio vêm como consequência [Decidido] |
 
 As referências valem pelo ritmo e pela comédia. Nenhum personagem, sprite ou piada será copiado delas.
 
@@ -38,7 +39,7 @@ As referências valem pelo ritmo e pela comédia. Nenhum personagem, sprite ou p
 
 ## Público, tom e limites do humor
 
-O público é infantil e o humor vai do cômico ao hilário [Decidido]. Mantemos a faixa de 8 a 12 anos do PRD anterior [Proposto], com partida rápida e pouco texto.
+O público é infantil e o humor vai do cômico ao hilário [Decidido]. Mantemos a faixa de 8 a 12 anos do PRD anterior [Decidido], com partida rápida e pouco texto.
 
 **Exemplos de humor** [Decidido]:
 
@@ -65,21 +66,28 @@ Davi tem dois ataques: um golpe básico e um especial de funda que depende de um
 | Esquerda | Botões esquerda e direita | Mover Davi |
 | Direita | Pular | Pular, com salto mais alto ao segurar |
 | Direita | Golpe | Atacar com o cajado ou a espada |
-| Direita | Funda | Soltar o especial com a barra cheia |
+| Direita | Funda | Acionar o especial com a barra cheia e escolher o lado |
 
 **Ataques:**
 
 | Ataque | Quando | Como funciona |
 | --- | --- | --- |
-| Cajado | Fases 1 a 3 [Decidido] | Golpe corpo a corpo, sem custo de energia |
+| Cajado | Fases 1 a 3 [Decidido] | Golpe corpo a corpo que derrota inimigos comuns e atordoa chefes [Decidido], sem custo de energia |
 | Espada | Fase 4 [Decidido] | Substitui o cajado, com alcance e dano maiores [Proposto] |
-| Funda | Todas as fases, com barra cheia [Decidido] | Pedra de longa distância e dano alto; gasta a barra [Proposto] |
+| Funda | Todas as fases, com barra cheia [Decidido] | Golpe grande que pega tudo de um lado, direita ou esquerda [Decidido]; o jogador escolhe o lado em até 2 segundos [Decidido] e o golpe gasta a barra [Proposto] |
 
 **Barra de energia:**
 
 - Enche com muita energia acumulada e libera a funda [Decidido].
 - Resgatar uma ovelha dá muita energia [Decidido].
-- Acertar inimigos dá pouca energia [Proposto].
+- Fora das lutas contra chefes, acertar inimigos dá pouca energia [Decidido].
+
+**Acionar a funda:** ao apertar o botão, o jogador tem 2 segundos para decidir o lado do ataque [Decidido].
+
+1. Davi gira a funda e duas setas aparecem, uma de cada lado [Proposto].
+2. Os inimigos param e reagem durante a escolha, e nenhum ataque acerta Davi [Proposto].
+3. O jogador toca em uma seta, e o golpe sai na hora, sem esperar os 2 segundos [Proposto].
+4. Sem escolha, o golpe vai para onde Davi está olhando [Proposto].
 
 **Vida de Davi** [Proposto]:
 
@@ -90,7 +98,15 @@ Davi tem dois ataques: um golpe básico e um especial de funda que depende de um
 
 **Ajudas de controle** [Proposto]: pulo aceito pouco depois de sair da beirada, comando guardado por um instante antes de tocar o chão e áreas de colisão generosas a favor do jogador. Isso compensa a falta de botão físico.
 
-**Fora do jogo:** XP, níveis e upgrades entre fases [Proposto]. A evolução é contada pela história, com a espada.
+**Fora do jogo:** menu de upgrades, XP e pontos para distribuir [Proposto].
+
+**Evolução de Davi:** a cada fase, Davi fica mais forte [Decidido]. O ganho é automático ao vencer o chefe, sem menu [Decidido].
+
+| Vitória | Ganho [Decidido] |
+| --- | --- |
+| Leão | Um coração a mais |
+| Urso | Barra de energia enche mais rápido |
+| Golias | Espada, com alcance e dano maiores [Decidido] |
 
 ## Ovelhas teimosas
 
@@ -128,7 +144,7 @@ As ovelhas alimentam a funda e são o principal gerador de piadas do jogo. Elas 
 **Regras da cena** [Proposto]:
 
 - A piada é escondida: o destaque nunca é o sentinela, e não há zoom, pausa ou som de destaque.
-- O sentinela é israelita, porque Davi chega ao acampamento de Saul (1 Sm 17:20-22). Assim ele fica fora da luta.
+- O sentinela é israelita [Decidido], porque Davi chega ao acampamento de Saul (1 Sm 17:20-22). Assim ele fica fora da luta.
 - A ovelha fica no caminho, para que Davi a resgate naturalmente, com o jogador no controle.
 - A graça vem do tempo: olhos grandes, boca aberta e cerca de 2 segundos encarando a tela.
 - A expressão precisa ser aprovada na tela do celular, no tamanho real do sprite.
@@ -139,8 +155,8 @@ O jogo tem quatro fases, sempre com um clímax. Golias cai com a funda, e a espa
 
 | Fase | Cenário [Proposto] | Objetivo | Inimigos | Clímax | Arma |
 | --- | --- | --- | --- | --- | --- |
-| 1. O pastor | Pastos e rochas | Coletar ovelhas [Decidido] | [Pendente] | Chefe Leão [Decidido] | Cajado |
-| 2. A ravina | Savana e ravinas | Avançar e proteger o rebanho [Proposto] | Lobos [Decidido] | Chefe Urso [Decidido] | Cajado |
+| 1. O pastor | Pastos e rochas | Coletar ovelhas [Decidido] | Hienas e chacais [Decidido] | Chefe Leão [Decidido] | Cajado |
+| 2. A ravina | Savana e ravinas | Avançar e proteger o rebanho [Proposto] | Hienas e lobos [Decidido] | Chefe Urso [Decidido] | Cajado |
 | 3. Vale de Elá | Acampamento e vale | Enfrentar o gigante [Decidido] | Filisteus [Proposto] | Chefe Golias [Decidido] | Cajado, com a funda no golpe final |
 | 4. Os 100 filisteus | Campo de batalha | Sobreviver [Decidido] | Filisteus em ondas [Decidido] | Contador chega a 100 [Decidido] | Espada de Golias |
 
@@ -150,10 +166,15 @@ O jogo tem quatro fases, sempre com um clímax. Golias cai com a funda, e a espa
 - Ele recusa a armadura de Saul e vai com cajado, funda e cinco pedras (1 Sm 17:38-40).
 - Vence Golias com pedra e funda, sem espada na mão (1 Sm 17:49-50), e depois toma a espada do gigante (17:51).
 
+**Lutas contra Leão e Urso:** um golpe de funda tira toda a vida do chefe [Decidido]. Para isso, Davi precisa resgatar ovelhas durante a luta, e os chefes ignoram as ovelhas e focam em Davi [Decidido].
+
+- Na luta, a barra enche só com ovelhas, e o cajado apenas atordoa o chefe [Decidido].
+- Novas ovelhas entram na arena depois de um golpe errado, para a luta nunca travar [Proposto].
+
 **Regras da fase 3** [Proposto]:
 
 - Golias muda de ataque conforme a luta avança.
-- O dano do cajado não basta. Golias só cai com a pedra da funda, então a barra cheia é a chave do final. Antes da pedra, entra a piada da ovelha na pochete; o tempo dela será ajustado em teste.
+- Cada golpe de funda tira 1/3 da vida de Golias [Decidido]. O cajado não basta, então ele só cai na terceira pedra. Para respeitar a pedra única de 1 Sm 17:49, a primeira derruba o escudo do escudeiro, a segunda derruba o capacete e só a terceira acerta a testa [Decidido]. Antes da pedra, entra a piada da ovelha na pochete; o tempo dela será ajustado em teste.
 - Depois da pedrada: Golias cai, os filisteus gritam e a alma de alguns sai do corpo.
 
 **Regras da fase 4:**
@@ -163,7 +184,29 @@ O jogo tem quatro fases, sempre com um clímax. Golias cai com a funda, e a espa
 - Limite inicial de 6 a 8 inimigos na tela [Proposto], ajustável depois do teste em Android.
 - O ritmo cresce a cada 25 derrotados, com um soldado diferente ou uma gag [Proposto].
 
-**Final** [Proposto]: a história termina com o povo cantando a vitória de Davi (1 Sm 18:7). Antes de ele virar rei, Davi abre a pochete, todas as ovelhas saem em fila e uma tela de encerramento fecha o jogo.
+**Final** [Proposto]: Davi é aclamado pelo povo pela vitória contra os 100 filisteus [Decidido], com a canção de 1 Sm 18:6-7. Antes de ele virar rei, Davi abre a pochete, todas as ovelhas saem em fila e uma tela de encerramento fecha o jogo.
+
+## Inimigos comuns
+
+Cada animal tem uma personalidade cômica própria, e as hienas aparecem nas fases 1 e 2 [Decidido]. Leão africano é usado no lugar do asiático, por ser mais fácil de reconhecer [Decidido].
+
+| Inimigo | Fases | Personalidade [Decidido] | Resistência [Decidido] |
+| --- | --- | --- | --- |
+| Hiena | 1 e 2 | Boba, ri o tempo todo, meio relaxada, um olho menor que o outro e língua sempre para fora | 2 golpes |
+| Chacal | 1 | Baixinho e briguento, com cara de buldogue | 3 golpes |
+| Lobo | 2 | Raivoso e bravo, até ver a funda | 3 golpes, mais rápido |
+
+**Hiena com design próprio** [Decidido]: a personalidade pode lembrar as hienas de O Rei Leão, mas desenho e nome serão originais. A hiena-listrada, nativa da região, resolve as duas coisas: é fiel à época e tem visual diferente das hienas pintadas do filme.
+
+**Lobos com medo:** quando a funda é acionada, os lobos veem o tamanho do golpe, perdem a pose, abraçam quem está mais perto e tremem de medo [Decidido].
+
+**Regras da reação** [Proposto]:
+
+- Os animais do lado oposto ao golpe continuam na reação por alguns instantes, sem atacar.
+- Lobo sozinho, e chacal ou hiena sem lobo por perto, se ajoelha, junta as mãos e começa a orar [Decidido].
+- Na v1, o abraço em par é só lobo com lobo e lobo com hiena, para limitar as animações.
+
+**Filisteus:** nunca oram, porque não creem no Deus verdadeiro [Decidido]. Durante a escolha, eles reagem só com a expressão de susto [Decidido]. A alma saindo do corpo fica reservada para a queda de Golias [Decidido].
 
 ## Direção de arte e cenários
 
@@ -194,6 +237,8 @@ O jogo será em pixel art, com personagens simples sobre cenários ricos, e todo
 
 A interface segue o padrão visual: ícones e imagens, pouco texto e nenhum significado transmitido só pela cor.
 
+**Produção da arte:** a arte será gerada por IA, e Danilo está estudando as ferramentas, de preferência com MCP e custo zero [Decidido]. Se não for viável, ele produz à mão [Decidido].
+
 ## Escopo
 
 A primeira versão é o jogo completo, com quatro fases e três chefes, e a animação é o maior custo dele [Proposto]. Cada piada visual é trabalho de arte, então as gags entram na lista de produção como qualquer outro item.
@@ -217,19 +262,21 @@ A primeira versão é o jogo completo, com quatro fases e três chefes, e a anim
 | --- | --- | --- |
 | Davi | Jogador | Parado, correr, pular, cair, golpe, funda, guardar ovelha, levar golpe, derrota, vitória |
 | Ovelha | Coleta | Andar, comer, balir, escapar, resgate e uma gag por variação |
-| Lobo | Inimigo fase 2 | Andar, atacar, levar golpe, fugir |
+| Lobo | Inimigo fase 2 | Andar, atacar, levar golpe, abraçar e tremer, orar |
 | Filisteu | Inimigo fases 3 e 4 | Andar, atacar, levar golpe, susto, fugir |
 | Leão | Chefe | Parado, 2 ou 3 ataques com aviso, levar golpe, derrota |
 | Urso | Chefe | Parado, 2 ou 3 ataques com aviso, levar golpe, derrota |
 | Golias | Chefe | Parado, 3 ataques com aviso, levar golpe, queda |
 | Sentinela | Piada da fase 3 | Cochilar, acordar, olhar para a tela, olhar para Davi |
+| Hiena | Inimigo fases 1 e 2 | Andar, rir, atacar, levar golpe, ser abraçada, orar |
+| Chacal | Inimigo fase 1 | Andar, atacar, levar golpe, fugir, orar |
 
 **Como conter o custo** [Proposto]:
 
 - Cajado e espada usam as mesmas animações de Davi, trocando só a camada da arma.
 - Variações de filisteu mudam capacete e cor, sem novas animações.
 - Cada chefe recebe no máximo três ataques na v1.
-- Inimigo da fase 1, se existir, reaproveita um tipo simples.
+- Hienas reaparecem na fase 2, sem novas animações além do abraço.
 
 ## Requisitos
 
@@ -241,7 +288,7 @@ Estes são os requisitos da v1 [Proposto], em ordem de construção do jogo.
 | RF02 | Pular com altura variável | Alta |
 | RF03 | Golpear com a arma atual | Alta |
 | RF04 | Encher a barra por ovelhas e por acertos | Alta |
-| RF05 | Disparar a funda só com a barra cheia | Alta |
+| RF05 | Disparar a funda com a barra cheia, pegando tudo de um lado | Alta |
 | RF06 | Ovelhas teimosas com movimento próprio | Alta |
 | RF07 | Vida em corações e ponto de controle | Alta |
 | RF08 | Inimigos comuns com ataque e reação ao golpe | Alta |
@@ -256,6 +303,11 @@ Estes são os requisitos da v1 [Proposto], em ordem de construção do jogo.
 | RF17 | Cena do sentinela uma única vez, no início da fase 3 | Média |
 | RF18 | Ovelha antes da pedra no golpe final em Golias | Média |
 | RF19 | Fila de ovelhas saindo da pochete no final | Média |
+| RF20 | Davi fica mais forte automaticamente a cada chefe vencido | Alta |
+| RF21 | Animais abraçam, tremem ou oram quando a funda é acionada | Média |
+| RF22 | Escolher o lado da funda em até 2 segundos | Alta |
+| RF23 | Leão e Urso caem com um golpe de funda, com ovelhas na luta | Alta |
+| RF24 | Golias cai com três golpes de funda | Alta |
 
 **Requisitos de mobile:**
 
@@ -287,7 +339,7 @@ O jogo continua em Godot, e o código atual do repositório quase todo será sub
 - Física de plataforma com `CharacterBody2D`, sem física de projétil como centro do jogo.
 - Animações em `AnimatedSprite2D`, com camada separada para a arma.
 
-**Higiene do repositório** [Proposto]: criar `.gitignore`, tirar do versionamento `.godot` e `.fennara/tmp`, e reescrever o README, que ainda descreve Phaser.
+**Higiene do repositório** [Proposto]: criar `.gitignore`, tirar do versionamento `.godot` e `.fennara/tmp`.
 
 ## Marcos e evidência
 
@@ -322,6 +374,18 @@ Um marco só termina quando o portão dele passa; se o portão falhar, o escopo 
 | Tamanho do build | Abaixo de 50 MB |
 | Criança entende os controles | Sem explicação de um adulto |
 
+## Publicação
+
+Publicar em loja é o objetivo principal, e a Google Play vem primeiro [Proposto]. Isso acrescenta exigências que precisam entrar no plano antes do lançamento.
+
+| Exigência | O que significa para o jogo |
+| --- | --- |
+| [Teste fechado](https://support.google.com/googleplay/android-developer/answer/14151465?hl=en) | Conta pessoal criada depois de 13/11/2023 precisa de 12 testadores por 14 dias seguidos antes de ir para produção |
+| [Público infantil](https://support.google.com/googleplay/android-developer/answer/9893335?hl=en) | Política de privacidade, dados declarados, sem identificadores do aparelho, e anúncios só com SDK certificado |
+| [Taxas](https://www.choicely.com/tutorials/how-much-does-it-cost-to-publish-an-app) | Google Play: US$ 25, pagamento único. Apple: US$ 99 por ano |
+
+A regra de crianças varia por país, e o texto da Google recomenda orientação jurídica. O jogo será gratuito inicialmente [Decidido]. Para simplificar a v1, a proposta é não usar anúncios nem coletar dados [Proposto]. Os 14 dias de teste entram depois do Marco 5.
+
 ## Riscos
 
 O maior risco é o volume de animação, seguido da sensação dos botões virtuais.
@@ -336,13 +400,11 @@ O maior risco é o volume de animação, seguido da sensação dos botões virtu
 | Visual próximo demais da imagem de referência | Médio | Usá-la só como direção; criar paleta e sprites próprios |
 | Mercado cheio de jogos em pixel art | Médio | Destaque no tema, no humor e nas ovelhas |
 | Escopo crescer com novas ideias | Alto | Toda ideia nova entra primeiro em “Fora da v1” |
+| Hiena parecida demais com as de O Rei Leão | Médio | Hiena-listrada, com desenho e nome próprios |
 
 ## Decisões pendentes
 
-Cinco decisões ainda dependem de Danilo; a primeira e a segunda mudam a prioridade do projeto.
+Duas decisões ainda dependem de Danilo; a primeira trava a produção de arte, mas não o Marco 1.
 
-- [ ] **Objetivo:** aprender a programar, ter um portfólio ou publicar na loja? Isso define o quanto será feito à mão e o nível de acabamento.
-- [ ] **Gênero:** plataforma com pulo, como este PRD assume a partir de Earthworm Jim e Metal Slug?
-- [ ] **Quem produz a arte:** desenho próprio, geração por IA ou os dois? Com quais ferramentas?
-- [ ] **Inimigos da fase 1:** nenhum, ou um tipo simples, como cobras?
-- [ ] **Faixa etária:** continua 8 a 12 anos?
+- [ ] **Ferramentas de arte:** quais plataformas de IA serão usadas?
+- [ ] **Anúncios:** a v1 gratuita fica sem anúncios?

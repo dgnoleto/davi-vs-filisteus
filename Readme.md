@@ -10,8 +10,8 @@ Davi vai de pastor a herói de Israel, com cajado, funda e uma pochete que guard
 
 | Fase | Desafio | Clímax |
 |---|---|---|
-| 1. O pastor | Coletar ovelhas teimosas | Chefe Leão |
-| 2. A ravina | Enfrentar lobos | Chefe Urso |
+| 1. O pastor | Coletar ovelhas teimosas entre hienas e chacais | Chefe Leão |
+| 2. A ravina | Enfrentar hienas e lobos | Chefe Urso |
 | 3. Vale de Elá | Chegar ao exército e encarar o gigante | Chefe Golias, derrotado com a funda |
 | 4. Os 100 filisteus | Sobreviver com a espada de Golias | Contador chega a 100 |
 
@@ -20,9 +20,10 @@ O tom vem de jogos como Earthworm Jim e Metal Slug: ação simples e muitas rea�
 ## Como jogar (planejado)
 
 - Botões na tela para mover Davi.
-- Golpe básico com o cajado, e com a espada na fase final.
+- Botão de pulo.
+- Golpe básico com o cajado, que derrota inimigos comuns e atordoa chefes. Na fase final, ele dá lugar à espada.
 - Ovelhas resgatadas enchem a barra de energia.
-- Com a barra cheia, Davi solta o especial da funda.
+- Com a barra cheia, Davi solta o especial da funda, que pega todo um lado da tela.
 
 Os controles detalhados ainda serão validados em Android real. Consulte o PRD para ver o que está decidido, proposto ou pendente.
 
