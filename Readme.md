@@ -46,6 +46,9 @@ Para abrir o protótipo atual, importe `project.godot` no Godot. A cena principa
 | `js/`, `index.html`, `old-prototype/`, `prototypes/` | Protótipos em Phaser | Legado |
 | `assets/` | Artes rubber hose e de 2013 | Legado; o jogo terá nova arte |
 | `addons/fennara/` | Plugin de MCP para o Godot | Ferramenta |
+| `AGENTS.md` | Regras e papéis de IAs e pessoas | **Atual** |
+| `docs/guia-de-trabalho.md` | Fluxo de issues, evidência e como publicar | **Atual** |
+| `.github/ISSUE_TEMPLATE/` | Modelos de história, task, bug e melhoria | **Atual** |
 
 ## Próximos marcos
 

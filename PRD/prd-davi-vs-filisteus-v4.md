@@ -230,7 +230,7 @@ O jogo será em pixel art, com personagens simples sobre cenários ricos, e todo
 
 **Base técnica da arte** [Proposto]:
 
-- Resolução interna de 640×360, que amplia por inteiro para 720p e 1080p.
+- Resolução interna de 640×360, que amplia por inteiro para 720p e 1080p [Decidido em 25/11/2026].
 - Tamanho inicial: Davi com cerca de 48 px, Leão e Urso com cerca de 96 px e Golias com cerca de 128 px.
 - Paleta única para todo o jogo, definida antes do primeiro sprite final.
 - Proporções grossas: cabeça grande e membros largos, para ler bem na tela do celular.
@@ -335,11 +335,24 @@ O jogo continua em Godot, e o código atual do repositório quase todo será sub
 
 **Mudanças de projeto no Godot** [Proposto]:
 
-- Viewport de 640×360, escala inteira e filtro de textura Nearest.
+- Viewport de 640×360 [Decidido], escala inteira e filtro de textura Nearest [Proposto].
 - Física de plataforma com `CharacterBody2D`, sem física de projétil como centro do jogo.
 - Animações em `AnimatedSprite2D`, com camada separada para a arma.
 
 **Higiene do repositório** [Proposto]: criar `.gitignore`, tirar do versionamento `.godot` e `.fennara/tmp`.
+
+## Papéis das IAs
+
+Neste projeto o Claude orquestra e define o papel de cada IA; os papéis são reajustados ao fim de cada sprint [Decidido]. A divisão abaixo é a versão inicial [Proposto] e vale como regra operacional em `AGENTS.md`.
+
+| Quem | Papel | Não faz |
+| --- | --- | --- |
+| Danilo | Decide escopo, aprova issues e merges, testa em Android real, faz commit e push no PowerShell | |
+| Claude | Orquestra: PRD, issues, critérios de conclusão, revisão de evidência, ajuste de papéis | Fecha issue sem a evidência declarada |
+| Codex | Implementa issues de código em GDScript, uma issue por vez, em branch própria | Mexe em arquivos fora do escopo da issue |
+| Antigravity | Trabalha na cena e no editor do Godot e roda o projeto localmente, usando o MCP do Godot | Muda mecânica ou escopo sem issue |
+
+**Regra de issues** [Decidido]: nenhum ajuste sem issue de história de usuário, task, bug ou melhoria. Merge não é aceite, e uma recomendação ou relatório não é autorização. A ferramenta de arte segue em aberto (ver Decisões pendentes).
 
 ## Marcos e evidência
 
