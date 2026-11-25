@@ -1,0 +1,17 @@
+# Godot: pastas geradas pelo editor
+.godot/
+
+# Fennara: scripts temporários gerados pela IA (scripts/ continua versionado)
+.fennara/tmp/
+
+# Builds e chaves
+*.apk
+*.aab
+*.keystore
+*.jks
+export_credentials.cfg
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+*.swp
